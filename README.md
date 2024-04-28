@@ -8,12 +8,10 @@
  * Davi Pires Aquino de Carvalho - davipadecarvalho@hotmail.com
 
 ## Descrição geral do projeto
-
- 1. Quem vai usar o programa?
- 2. Que serviços são “necessários” (leia-se: importantes para os clientes e usuários)?
- 3. Quais serviços cada usuário pode executar?
-
- O projeto é dedicado a leitores que querem ter registro das suas leituras, sejam elas leituras passadas, futuras ou atuais. 
+Rede social para o gerenciamento de leituras de livros inspirado no Cabeceira e Letterbox.
+Os leitores(usuários) poderão se registrar, pesquisar e descobrir novos livros, adicionar em suas listas, compartilhar avaliações e
+definir a progressão de suas leituras. O programa conta com apenas um tipo de usuário e um sistema de "gamificação" para incentivar os 
+leitores.
 
 ## Requisitos do projeto (TO-DO)
 
