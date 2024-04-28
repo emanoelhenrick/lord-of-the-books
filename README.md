@@ -16,12 +16,13 @@ A partir disso, você deve detalhar as funcionalidades do sistema tentando respo
  3. Quais serviços cada usuário pode executar?
 
 ## Requisitos do projeto (TO-DO)
-Liste de forma numerada e com identificadores únicos os seus requisitos de projeto. 
-A descrição de cada requisito deve ser breve, porém informativa. 
-Exemplo de requisitos para um sistema de automação comercial (A INFORMAÇÃO ABAIXO É SOMENTE UM EXEMPLO E DEVE SER ALTERADA):
- * **REQ1** - O sistema deve controlar o acesso através de login e senha. Os usuários do sistema serão do tipo administrador e funcionário
- * **REQ2** - O sistema deve permitir a venda de produtos previamente cadastrados e salvá-los como em um histórico de vendas por cliente. Cada venda de produto deve ser associada a um cliente único.
- * **REQ3** - O sistema deve permitir o gerenciamento (Create, Recover, Update e Delete - CRUD) de clientes e produtos e produtos e essa ação pode ser feita por funcionários comuns.
- * **REQ4** - O sistema deve permitir o gerenciamento (CRUD) de funcionários da empresa e essa ação somente poderá ser executada por usuários administradores. Usuários administradores também podem executar todas as funcionalidades que um funcionário comum pode executar.
 
-ATENÇÃO - A sua lista de requisitos não deve ultrapassar mais de 30 itens.
+ * **REQ1** Deve ser possível o usuário registrar e logar no sistema
+ * **REQ2** O usuário deve poder adicionar livros
+ * **REQ3** O usuario deve poder categorizar os livros em lido, nao lido, lendo, relido e favoritos
+ * **REQ4** O usuario deve poder marcar a progressao dos livros
+ * **REQ5** O usuario deve poder classificar os livros em ate 5 estrelas
+ * **REQ6** O usuario deve poder escrever uma resenha do livro
+ * **REQ7** O usuario deve poder pesquisar um livro
+ * **REQ8** O usuario deve poder atualizar a categoria entre: nao lido, lendo, lido, relido e favoritos
+ * **REQ9** O usuario deve ter um sistema "gameficado" de niveis por livro lido
