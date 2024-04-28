@@ -7,13 +7,13 @@
  * Heitor Carvalho Santana - heitor.csantana@ufrpe.br
  * Davi Pires Aquino de Carvalho - davipadecarvalho@hotmail.com
 
-## Descrição geral do projeto (TO-DO)
-Nesta descrição, apresente um texto resumido com a(s) principal(is) funcionalidade(s) do sistema. 
-É muito importante que você consiga responder em uma única frase: qual a principal funcionalidade do seu sistema? 
-A partir disso, você deve detalhar as funcionalidades do sistema tentando responder às perguntas:
+## Descrição geral do projeto
+
  1. Quem vai usar o programa?
  2. Que serviços são “necessários” (leia-se: importantes para os clientes e usuários)?
  3. Quais serviços cada usuário pode executar?
+
+ O projeto é dedicado a leitores que querem ter registro das suas leituras, sejam elas leituras passadas, futuras ou atuais. 
 
 ## Requisitos do projeto (TO-DO)
 
@@ -26,3 +26,5 @@ A partir disso, você deve detalhar as funcionalidades do sistema tentando respo
  * **REQ7** O usuario deve poder pesquisar um livro
  * **REQ8** O usuario deve poder atualizar a categoria entre: nao lido, lendo, lido, relido e favoritos
  * **REQ9** O usuario deve ter um sistema "gameficado" de niveis por livro lido
+ * **REQ10** O usuário deve poder adicionar livros a lista “ler mais tarde”
+ * **REQ11** O usuário deve poder estabelecer uma meta de leitura
