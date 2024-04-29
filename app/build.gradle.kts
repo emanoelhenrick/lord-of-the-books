@@ -34,7 +34,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "org.minimundo.App"
+    mainClass = "org.minimundo.main.App"
 }
 
 tasks.named<Test>("test") {

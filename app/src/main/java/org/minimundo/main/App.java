@@ -1,4 +1,4 @@
-package org.minimundo;
+package org.minimundo.main;
 
 public class App {
 
