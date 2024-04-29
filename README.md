@@ -13,7 +13,7 @@ Os leitores(usuários) poderão se registrar, pesquisar e descobrir novos livros
 definir a progressão de suas leituras. O programa conta com apenas um tipo de usuário e um sistema de "gamificação" para incentivar os 
 leitores.
 
-## Requisitos do projeto (TO-DO)
+## Requisitos do projeto
 
  * **REQ1** Deve ser possível o usuário registrar e logar no sistema
  * **REQ2** O usuário deve poder adicionar livros
