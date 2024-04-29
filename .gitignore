@@ -1,5 +1,19 @@
-# Ignore Gradle project-specific cache directory
+##############################
+## Gradle
+##############################
+bin/
+build/
 .gradle
+.gradletasknamecache
+gradle-app.setting
+!gradle-wrapper.jar
 
-# Ignore Gradle build output directory
-build
+##############################
+## IntelliJ
+##############################
+out/
+.idea/
+.idea_modules/
+*.iml
+*.ipr
+*.iws
