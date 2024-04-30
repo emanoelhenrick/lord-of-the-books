@@ -1,7 +1,9 @@
 package org.minimundo.utils.GoogleBooks;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.modelmapper.ModelMapper;
+import org.minimundo.utils.GoogleBooks.dtos.BookDto;
+import org.minimundo.utils.GoogleBooks.dtos.ItemDto;
+import org.minimundo.utils.GoogleBooks.dtos.ResponseDto;
 
 import java.io.IOException;
 import java.net.URI;
@@ -24,7 +26,7 @@ public class GoogleBooks {
 
     return responseDto.items
       .stream()
-      .map(GoogleBooks::bookAssembler)
+      .map(BookDto::assembler)
       .toList();
   }
 
@@ -56,10 +58,6 @@ public class GoogleBooks {
 
     HttpResponse<String> res = client.send(req, HttpResponse.BodyHandlers.ofString());
     return res.body();
-  }
-
-  private static BookDto bookAssembler(ItemDto item) {
-    return new BookDto(item);
   }
 
 }

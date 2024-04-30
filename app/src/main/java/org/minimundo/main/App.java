@@ -1,6 +1,6 @@
 package org.minimundo.main;
 
-import org.minimundo.utils.GoogleBooks.BookDto;
+import org.minimundo.utils.GoogleBooks.dtos.BookDto;
 import org.minimundo.utils.GoogleBooks.GoogleBooks;
 
 import java.io.IOException;
@@ -10,7 +10,6 @@ public class App {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        List<BookDto> books = GoogleBooks.search("dune", 0, 1);
-        System.out.println(books.getFirst().getTitle());
+        List<BookDto> books = GoogleBooks.search("dune", 0, 5);
     }
 }

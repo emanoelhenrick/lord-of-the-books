@@ -1,4 +1,4 @@
-package org.minimundo.utils.GoogleBooks;
+package org.minimundo.utils.GoogleBooks.dtos;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -24,5 +24,9 @@ public class BookDto {
     this.description = item.volumeInfo.description;
     this.smallThumbnail = item.volumeInfo.imageLinks.smallThumbnail;
     this.thumbnail = item.volumeInfo.imageLinks.thumbnail;
+  }
+
+  public static BookDto assembler(ItemDto item) {
+    return new BookDto(item);
   }
 }
