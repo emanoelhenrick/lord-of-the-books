@@ -21,13 +21,12 @@ public class GoogleBooks {
   public static List<BookDto> search(String args, int startIndex, int maxResults) throws IOException, InterruptedException {
     String newArgs = RegExUtils.replaceAll(args, " ", "+");
     String url = "https://www.googleapis.com/books/v1/volumes?q=" + newArgs + "&printType=books"
-      + "&projection=lite"
       + "&maxResults=" + maxResults
       + "&startIndex=" + startIndex;
     String response = getRequest(url);
     ResponseDto responseDto = mapper.readValue(response, ResponseDto.class);
 
-    return responseDto.items
+    return responseDto.getItems()
       .stream()
       .map(BookDto::assembler)
       .toList();

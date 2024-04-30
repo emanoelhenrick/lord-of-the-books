@@ -15,6 +15,8 @@ public class BookDto {
   ArrayList<String> authors;
   String publisher;
   String description;
+  ArrayList<String> categories;
+  int pageCount;
   String smallThumbnail;
   String thumbnail;
 
@@ -23,18 +25,20 @@ public class BookDto {
     String desc2 = RegExUtils.removeAll(desc1, "<[^>]*>");
     String desc3 = StringUtils.normalizeSpace(desc2);
 
-    this.id = item.id;
-    this.title = item.volumeInfo.title;
-    this.authors = item.volumeInfo.authors;
-    this.publisher = item.volumeInfo.publisher;
+    this.id = item.getId();
+    this.title = item.volumeInfo.getTitle();
+    this.authors = item.volumeInfo.getAuthors();
+    this.publisher = item.volumeInfo.getPublisher();
+    this.categories = item.volumeInfo.getCategories();
+    this.pageCount = item.volumeInfo.getPageCount();
     this.description = desc3;
 
     if (item.volumeInfo.imageLinks == null) {
       this.smallThumbnail = "none";
       this.thumbnail = "none";
     } else {
-      this.smallThumbnail = item.volumeInfo.imageLinks.smallThumbnail;
-      this.thumbnail = item.volumeInfo.imageLinks.thumbnail;
+      this.smallThumbnail = item.volumeInfo.imageLinks.getSmallThumbnail();
+      this.thumbnail = item.volumeInfo.imageLinks.getThumbnail();
     }
   }
 
