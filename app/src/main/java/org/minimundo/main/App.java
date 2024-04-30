@@ -10,7 +10,9 @@ public class App {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        GoogleBooks.findById("taoSEAAAQBAJ");
+        BookDto book = GoogleBooks.findById("h82uCgAAQBAJ");
+        System.out.println(book.getSmallThumbnail());
+        System.out.println(book.getThumbnail());
 
     }
 }

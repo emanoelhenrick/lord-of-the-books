@@ -24,11 +24,10 @@ dependencies {
     // This dependency is used by the application.
     implementation(libs.guava)
     implementation("com.fasterxml.jackson.core:jackson-databind:2.16.1")
-    implementation("org.modelmapper:modelmapper:3.1.1")
+    implementation("org.apache.commons:commons-lang3:3.12.0")
 
     // compile
     compileOnly("org.projectlombok:lombok:1.18.30")
-
     annotationProcessor("org.projectlombok:lombok:1.18.30")
 
 }
