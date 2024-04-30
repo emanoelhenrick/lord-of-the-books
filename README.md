@@ -15,14 +15,18 @@ leitores.
 
 ## Requisitos do projeto
 
- * **REQ1** Deve ser possível o usuário registrar e logar no sistema
- * **REQ2** O usuário deve poder adicionar livros
- * **REQ3** O usuario deve poder categorizar os livros em lido, nao lido, lendo, relido e favoritos
- * **REQ4** O usuario deve poder marcar a progressao dos livros
- * **REQ5** O usuario deve poder classificar os livros em ate 5 estrelas
- * **REQ6** O usuario deve poder escrever uma resenha do livro
- * **REQ7** O usuario deve poder pesquisar um livro
- * **REQ8** O usuario deve poder atualizar a categoria entre: nao lido, lendo, lido, relido e favoritos
- * **REQ9** O usuario deve ter um sistema "gameficado" de niveis por livro lido
- * **REQ10** O usuário deve poder adicionar livros a lista “ler mais tarde”
- * **REQ11** O usuário deve poder estabelecer uma meta de leitura
+  * **REQ1** Deve ser possível o usuário registrar e logar no sistema
+  * **REQ2** O usuário deve poder adicionar livros
+  * **REQ3** O usuario deve poder categorizar os livros em lido, nao lido, lendo ou relendo
+  * **REQ4** O usuario deve poder marcar a progressao dos livros
+  * **REQ5** O usuario deve poder classificar os livros em ate 5 estrelas
+  * **REQ6** O usuario deve poder escrever uma resenha do livro
+  * **REQ7** O usuario deve poder pesquisar um livro
+  * **REQ8** O usuario deve poder atualizar a categoria entre: nao lido, lendo, lido ou relendo
+  * **REQ9** O usuario deve ter um sistema "gameficado" de niveis por livro lido
+  * **REQ10** O usuário deve poder adicionar livros a lista “ler mais tarde”
+  * **REQ11** O usuário deve poder estabelecer uma meta de leitura
+  * **REQ11** O usuário pode consultar as resenhas escritas sobre o livro
+  * **REQ12** O usuário pode consultar a avaliação dos livros
+  * **REQ13** O usuário pode adicionar livros a lista de favoritos
+  * **REQ14** PALAVRAS CHAVE (GENERO E ETC)
