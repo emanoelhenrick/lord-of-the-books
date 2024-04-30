@@ -1,6 +1,8 @@
 package org.minimundo.utils.GoogleBooks;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.lang3.RegExUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.minimundo.utils.GoogleBooks.dtos.BookDto;
 import org.minimundo.utils.GoogleBooks.dtos.ItemDto;
 import org.minimundo.utils.GoogleBooks.dtos.ResponseDto;
@@ -17,7 +19,9 @@ public class GoogleBooks {
   static ObjectMapper mapper = new ObjectMapper();
 
   public static List<BookDto> search(String args, int startIndex, int maxResults) throws IOException, InterruptedException {
-    String url = "https://www.googleapis.com/books/v1/volumes?q=" + args + "&printType=books"
+    String newArgs = RegExUtils.replaceAll(args, " ", "+");
+    System.out.println(newArgs);
+    String url = "https://www.googleapis.com/books/v1/volumes?q=" + newArgs + "&printType=books"
       + "&projection=lite"
       + "&maxResults=" + maxResults
       + "&startIndex=" + startIndex;
@@ -31,7 +35,9 @@ public class GoogleBooks {
   }
 
   public static List<BookDto> search(String args) throws IOException, InterruptedException {
-    String url = "https://www.googleapis.com/books/v1/volumes?q=" + args
+    String newArgs = RegExUtils.replaceAll(args, " ", "+");
+    System.out.println(newArgs);
+    String url = "https://www.googleapis.com/books/v1/volumes?q=" + newArgs
       + "&projection=lite"
       + "&printType=books";
 
