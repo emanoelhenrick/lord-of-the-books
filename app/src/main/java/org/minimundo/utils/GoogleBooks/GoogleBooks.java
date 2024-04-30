@@ -30,19 +30,25 @@ public class GoogleBooks {
       .toList();
   }
 
-  public static void search(String args) throws IOException, InterruptedException {
+  public static List<BookDto> search(String args) throws IOException, InterruptedException {
     String url = "https://www.googleapis.com/books/v1/volumes?q=" + args
       + "&projection=lite"
       + "&printType=books";
 
     String response = getRequest(url);
-    System.out.println(response);
+    ResponseDto responseDto = mapper.readValue(response, ResponseDto.class);
+
+    return responseDto.items
+      .stream()
+      .map(BookDto::assembler)
+      .toList();
   }
 
-  public static void findById(String bookId) throws IOException, InterruptedException {
-    String url = "https://www.googleapis.com/books/v1/volumes/" + bookId + "&projection=lite";
+  public static BookDto findById(String bookId) throws IOException, InterruptedException {
+    String url = "https://www.googleapis.com/books/v1/volumes/" + bookId;
     String response = getRequest(url);
-    System.out.println(response);
+    ItemDto itemDto = mapper.readValue(response, ItemDto.class);
+    return BookDto.assembler(itemDto);
   }
 
   static private String getRequest(String url) throws IOException, InterruptedException {
