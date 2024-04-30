@@ -20,7 +20,6 @@ public class GoogleBooks {
 
   public static List<BookDto> search(String args, int startIndex, int maxResults) throws IOException, InterruptedException {
     String newArgs = RegExUtils.replaceAll(args, " ", "+");
-    System.out.println(newArgs);
     String url = "https://www.googleapis.com/books/v1/volumes?q=" + newArgs + "&printType=books"
       + "&projection=lite"
       + "&maxResults=" + maxResults
