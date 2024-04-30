@@ -10,6 +10,6 @@ import java.util.ArrayList;
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ResponseDto{
-  public ArrayList<ItemDto> items = new ArrayList<>();
-  public int totalItems;
+  ArrayList<ItemDto> items = new ArrayList<>();
+  int totalItems;
 }

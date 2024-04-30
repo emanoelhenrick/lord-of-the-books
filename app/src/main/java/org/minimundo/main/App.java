@@ -12,7 +12,7 @@ public class App {
 
         List<BookDto> books = GoogleBooks.search("filhos de duna");
         for (BookDto book : books) {
-            System.out.println(book.getTitle());
+            System.out.println(book.getPageCount());
         }
     }
 }

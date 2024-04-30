@@ -20,34 +20,20 @@ public class GoogleBooks {
 
   public static List<BookDto> search(String args, int startIndex, int maxResults) throws IOException, InterruptedException {
     String newArgs = RegExUtils.replaceAll(args, " ", "+");
-    System.out.println(newArgs);
     String url = "https://www.googleapis.com/books/v1/volumes?q=" + newArgs + "&printType=books"
-      + "&projection=lite"
       + "&maxResults=" + maxResults
       + "&startIndex=" + startIndex;
     String response = getRequest(url);
     ResponseDto responseDto = mapper.readValue(response, ResponseDto.class);
 
-    return responseDto.items
+    return responseDto.getItems()
       .stream()
       .map(BookDto::assembler)
       .toList();
   }
 
   public static List<BookDto> search(String args) throws IOException, InterruptedException {
-    String newArgs = RegExUtils.replaceAll(args, " ", "+");
-    System.out.println(newArgs);
-    String url = "https://www.googleapis.com/books/v1/volumes?q=" + newArgs
-      + "&projection=lite"
-      + "&printType=books";
-
-    String response = getRequest(url);
-    ResponseDto responseDto = mapper.readValue(response, ResponseDto.class);
-
-    return responseDto.items
-      .stream()
-      .map(BookDto::assembler)
-      .toList();
+    return search(args, 0, 10);
   }
 
   public static BookDto findById(String bookId) throws IOException, InterruptedException {

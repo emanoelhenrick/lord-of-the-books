@@ -8,6 +8,6 @@ import lombok.Setter;
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ImageLinksDto {
-  public String smallThumbnail;
-  public String thumbnail;
+  String smallThumbnail;
+  String thumbnail;
 }

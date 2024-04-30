@@ -10,9 +10,11 @@ import java.util.ArrayList;
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VolumeInfoDto {
-  public String title;
-  public ArrayList<String> authors;
-  public String publisher;
-  public String description;
-  public ImageLinksDto imageLinks;
+  String title;
+  ArrayList<String> authors;
+  String publisher;
+  String description;
+  ArrayList<String> categories;
+  int pageCount;
+  ImageLinksDto imageLinks;
 }

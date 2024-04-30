@@ -8,6 +8,6 @@ import lombok.Setter;
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ItemDto {
-  public String id;
-  public VolumeInfoDto volumeInfo;
+  String id;
+  VolumeInfoDto volumeInfo;
 }
