@@ -39,7 +39,7 @@ public class GoogleBooks {
     return BookDtoAssembler.toBookDto(itemDto);
   }
 
-  static private String getRequest(String url) throws IOException, InterruptedException {
+  private static String getRequest(String url) throws IOException, InterruptedException {
     HttpRequest req = HttpRequest.newBuilder()
       .GET()
       .uri(URI.create(url))
