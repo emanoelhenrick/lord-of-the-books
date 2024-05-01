@@ -43,6 +43,7 @@ public class BookDtoAssembler {
     String[] split = publishedDate.split("-");
 
     return Arrays.stream(split)
+      .map(string -> RegExUtils.removeAll(string, "\\D+"))
       .filter(string -> string.length() == 4)
       .toList().getFirst();
   }
