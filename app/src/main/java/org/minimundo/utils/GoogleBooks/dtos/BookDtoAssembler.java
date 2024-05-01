@@ -4,7 +4,6 @@ import org.apache.commons.lang3.RegExUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Arrays;
-import java.util.stream.Collectors;
 
 public class BookDtoAssembler {
 

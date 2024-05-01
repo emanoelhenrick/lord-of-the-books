@@ -12,7 +12,7 @@ public class App {
 
         List<BookDto> books = GoogleBooks.search("hereges de duna");
         for (BookDto book : books) {
-            System.out.println(book.publishedYear());
+            System.out.println(book.categories());
         }
     }
 }
