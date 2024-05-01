@@ -1,9 +1,10 @@
 package org.minimundo.utils.GoogleBooks;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang3.RegExUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.minimundo.utils.GoogleBooks.dtos.BookDto;
+import org.minimundo.utils.GoogleBooks.dtos.BookDtoAssembler;
 import org.minimundo.utils.GoogleBooks.dtos.ItemDto;
 import org.minimundo.utils.GoogleBooks.dtos.ResponseDto;
 
@@ -24,12 +25,8 @@ public class GoogleBooks {
       + "&maxResults=" + maxResults
       + "&startIndex=" + startIndex;
     String response = getRequest(url);
-    ResponseDto responseDto = mapper.readValue(response, ResponseDto.class);
-
-    return responseDto.getItems()
-      .stream()
-      .map(BookDto::assembler)
-      .toList();
+    System.out.println(response);
+    return responseToBooks(response);
   }
 
   public static List<BookDto> search(String args) throws IOException, InterruptedException {
@@ -40,10 +37,10 @@ public class GoogleBooks {
     String url = "https://www.googleapis.com/books/v1/volumes/" + bookId;
     String response = getRequest(url);
     ItemDto itemDto = mapper.readValue(response, ItemDto.class);
-    return BookDto.assembler(itemDto);
+    return BookDtoAssembler.toBookDto(itemDto);
   }
 
-  static private String getRequest(String url) throws IOException, InterruptedException {
+  private static String getRequest(String url) throws IOException, InterruptedException {
     HttpRequest req = HttpRequest.newBuilder()
       .GET()
       .uri(URI.create(url))
@@ -56,6 +53,14 @@ public class GoogleBooks {
 
     HttpResponse<String> res = client.send(req, HttpResponse.BodyHandlers.ofString());
     return res.body();
+  }
+
+  private static List<BookDto> responseToBooks(String response) throws JsonProcessingException {
+    ResponseDto responseDto = mapper.readValue(response, ResponseDto.class);
+    return responseDto.items()
+      .stream()
+      .map(BookDtoAssembler::toBookDto)
+      .toList();
   }
 
 }

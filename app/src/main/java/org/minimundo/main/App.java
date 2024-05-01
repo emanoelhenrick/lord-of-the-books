@@ -10,9 +10,9 @@ public class App {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        List<BookDto> books = GoogleBooks.search("filhos de duna");
+        List<BookDto> books = GoogleBooks.search("hereges de duna");
         for (BookDto book : books) {
-            System.out.println(book.getPageCount());
+            System.out.println(book.categories());
         }
     }
 }
