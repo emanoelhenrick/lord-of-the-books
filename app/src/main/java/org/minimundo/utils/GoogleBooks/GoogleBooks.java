@@ -1,8 +1,8 @@
 package org.minimundo.utils.GoogleBooks;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang3.RegExUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.minimundo.utils.GoogleBooks.dtos.BookDto;
 import org.minimundo.utils.GoogleBooks.dtos.BookDtoAssembler;
 import org.minimundo.utils.GoogleBooks.dtos.ItemDto;
@@ -25,12 +25,7 @@ public class GoogleBooks {
       + "&maxResults=" + maxResults
       + "&startIndex=" + startIndex;
     String response = getRequest(url);
-    ResponseDto responseDto = mapper.readValue(response, ResponseDto.class);
-
-    return responseDto.items()
-      .stream()
-      .map(BookDtoAssembler::toBookDto)
-      .toList();
+    return responseToBooks(response);
   }
 
   public static List<BookDto> search(String args) throws IOException, InterruptedException {
@@ -57,6 +52,14 @@ public class GoogleBooks {
 
     HttpResponse<String> res = client.send(req, HttpResponse.BodyHandlers.ofString());
     return res.body();
+  }
+
+  private static List<BookDto> responseToBooks(String response) throws JsonProcessingException {
+    ResponseDto responseDto = mapper.readValue(response, ResponseDto.class);
+    return responseDto.items()
+      .stream()
+      .map(BookDtoAssembler::toBookDto)
+      .toList();
   }
 
 }
