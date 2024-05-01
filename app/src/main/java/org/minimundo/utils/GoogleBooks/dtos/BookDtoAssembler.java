@@ -3,11 +3,15 @@ package org.minimundo.utils.GoogleBooks.dtos;
 import org.apache.commons.lang3.RegExUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class BookDtoAssembler {
 
   public static BookDto toBookDto(ItemDto item){
     String description = fixDescription(item.volumeInfo().description());
     ImageLinksDto imageLinks = verifyThumbs(item.volumeInfo().imageLinks());
+    String publishedYear = fixDateYear(item.volumeInfo().publishedDate());
 
     return new BookDto(
       item.id(),
@@ -15,6 +19,7 @@ public class BookDtoAssembler {
       item.volumeInfo().authors(),
       item.volumeInfo().publisher(),
       description,
+      publishedYear,
       item.volumeInfo().categories(),
       item.volumeInfo().pageCount(),
       imageLinks.smallThumbnail(),
@@ -31,5 +36,14 @@ public class BookDtoAssembler {
   private static ImageLinksDto verifyThumbs(ImageLinksDto imageLinks) {
     if (imageLinks == null) return new ImageLinksDto("none", "none");
     return imageLinks;
+  }
+
+  private static String fixDateYear(String publishedDate) {
+    if (StringUtils.isEmpty(publishedDate)) return "none";
+    String[] split = publishedDate.split("-");
+
+    return Arrays.stream(split)
+      .filter(string -> string.length() == 4)
+      .toList().getFirst();
   }
 }

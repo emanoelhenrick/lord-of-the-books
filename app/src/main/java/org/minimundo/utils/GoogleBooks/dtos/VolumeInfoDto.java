@@ -10,6 +10,7 @@ public record VolumeInfoDto(
   ArrayList<String> authors,
   String publisher,
   String description,
+  String publishedDate,
   ArrayList<String> categories,
   int pageCount,
   ImageLinksDto imageLinks

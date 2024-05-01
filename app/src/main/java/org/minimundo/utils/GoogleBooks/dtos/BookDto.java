@@ -8,6 +8,7 @@ public record BookDto(
   ArrayList<String> authors,
   String publisher,
   String description,
+  String publishedYear,
   ArrayList<String> categories,
   int pageCount,
   String smallThumbnail,

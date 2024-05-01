@@ -25,6 +25,7 @@ public class GoogleBooks {
       + "&maxResults=" + maxResults
       + "&startIndex=" + startIndex;
     String response = getRequest(url);
+    System.out.println(response);
     return responseToBooks(response);
   }
 
