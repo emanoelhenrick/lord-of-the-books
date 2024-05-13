@@ -12,7 +12,7 @@ import org.minimundo.core.infra.APIs.helpers.HttpBookHelper;
 import java.io.IOException;
 import java.util.List;
 
-public class ApiBooksRepository implements
+public class GoogleBooksRepository implements
   SearchBooksByNameRepository,
   SearchBooksByIdRepository {
 
@@ -33,5 +33,4 @@ public class ApiBooksRepository implements
     ItemDto itemDto = mapper.readValue(response, ItemDto.class);
     return BookDtoAssembler.toBookDto(itemDto);
   }
-
 }
