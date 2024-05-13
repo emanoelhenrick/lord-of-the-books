@@ -9,11 +9,6 @@ import org.minimundo.utils.GoogleBooks.dtos.ItemDto;
 import org.minimundo.utils.GoogleBooks.dtos.ResponseDto;
 
 import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.time.Duration;
 import java.util.List;
 
 public class GoogleBooks {
@@ -40,18 +35,7 @@ public class GoogleBooks {
   }
 
   private static String getRequest(String url) throws IOException, InterruptedException {
-    HttpRequest req = HttpRequest.newBuilder()
-      .GET()
-      .uri(URI.create(url))
-      .timeout(Duration.ofSeconds(3))
-      .build();
-
-    HttpClient client = HttpClient.newBuilder()
-      .connectTimeout(Duration.ofSeconds(3))
-      .build();
-
-    HttpResponse<String> res = client.send(req, HttpResponse.BodyHandlers.ofString());
-    return res.body();
+    return HttpHelper.getRequest(url);
   }
 
   private static List<BookDto> responseToBooks(String response) throws JsonProcessingException {
