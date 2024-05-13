@@ -2,9 +2,9 @@ package org.minimundo.core.infra.APIs.helpers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.minimundo.utils.GoogleBooks.dtos.BookDto;
-import org.minimundo.utils.GoogleBooks.dtos.BookDtoAssembler;
-import org.minimundo.utils.GoogleBooks.dtos.ResponseDto;
+import org.minimundo.core.infra.APIs.books.dtos.BookDto;
+import org.minimundo.core.infra.APIs.books.dtos.BookDtoAssembler;
+import org.minimundo.core.infra.APIs.books.dtos.ResponseDto;
 
 import java.io.IOException;
 import java.net.URI;

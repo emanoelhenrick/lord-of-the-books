@@ -1,6 +1,6 @@
 package org.minimundo.core.domain.services.books;
 
-import org.minimundo.utils.GoogleBooks.dtos.BookDto;
+import org.minimundo.core.infra.APIs.books.dtos.BookDto;
 
 import java.io.IOException;
 import java.util.List;

@@ -3,18 +3,12 @@ package org.minimundo.utils.GoogleBooks;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang3.RegExUtils;
-import org.minimundo.core.data.services.books.HttpHelper;
 import org.minimundo.utils.GoogleBooks.dtos.BookDto;
 import org.minimundo.utils.GoogleBooks.dtos.BookDtoAssembler;
 import org.minimundo.utils.GoogleBooks.dtos.ItemDto;
 import org.minimundo.utils.GoogleBooks.dtos.ResponseDto;
 
 import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.time.Duration;
 import java.util.List;
 
 public class GoogleBooks {
