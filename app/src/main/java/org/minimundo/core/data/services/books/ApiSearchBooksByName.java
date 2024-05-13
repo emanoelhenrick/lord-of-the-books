@@ -11,15 +11,11 @@ public class ApiSearchBooksByName implements SearchBooksByName {
 
   SearchBooksByNameRepository repository;
 
-  ApiSearchBooksByName(SearchBooksByNameRepository repository) {
+  public ApiSearchBooksByName(SearchBooksByNameRepository repository) {
     this.repository = repository;
   }
   @Override
   public List<BookDto> searchByName(String args, int startIndex, int maxResults) throws IOException, InterruptedException {
     return repository.searchByName(args, startIndex, maxResults);
-  }
-
-  public List<BookDto> searchByName(String args) throws IOException, InterruptedException {
-    return repository.searchByName(args, 0, 10);
   }
 }
