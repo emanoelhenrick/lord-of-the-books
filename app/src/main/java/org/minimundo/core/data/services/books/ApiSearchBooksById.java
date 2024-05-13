@@ -8,11 +8,9 @@ import java.io.IOException;
 
 public class ApiSearchBooksById implements SearchBooksById {
   SearchBooksByIdRepository repository;
-
-  ApiSearchBooksById(SearchBooksByIdRepository repository){
+  public ApiSearchBooksById(SearchBooksByIdRepository repository){
     this.repository = repository;
   }
-
   @Override
   public BookDto searchById(String bookId) throws IOException, InterruptedException {
     return repository.searchById(bookId);
