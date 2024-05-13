@@ -15,7 +15,6 @@ import java.util.List;
 public class GoogleBooksRepository implements
   SearchBooksByNameRepository,
   SearchBooksByIdRepository {
-
   ObjectMapper mapper = new ObjectMapper();
   @Override
   public List<BookDto> searchByName(String args, int startIndex, int maxResults) throws IOException, InterruptedException {
