@@ -16,7 +16,6 @@ import java.util.List;
 
 public class HttpBookHelper {
   private static final ObjectMapper mapper = new ObjectMapper();
-
   public static String getRequest(String url) throws IOException, InterruptedException {
     HttpRequest req = HttpRequest.newBuilder()
       .GET()

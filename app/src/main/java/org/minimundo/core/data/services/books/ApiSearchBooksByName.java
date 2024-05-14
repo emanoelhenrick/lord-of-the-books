@@ -8,9 +8,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class ApiSearchBooksByName implements SearchBooksByName {
-
   SearchBooksByNameRepository repository;
-
   public ApiSearchBooksByName(SearchBooksByNameRepository repository) {
     this.repository = repository;
   }

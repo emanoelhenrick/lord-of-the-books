@@ -11,12 +11,11 @@ import java.io.IOException;
 import java.util.List;
 
 public class App {
-
     public static void main(String[] args) throws IOException, InterruptedException {
         SearchBooksByName BooksApi = SearchBooksByNameFactory.make();
         List<BookDto> books = BooksApi.searchByName("hereges de duna", 0, 10);
         for (BookDto book : books) {
-            System.out.println(book.categories());
+            System.out.println(book.title());
         }
     }
 }
