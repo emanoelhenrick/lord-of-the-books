@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class UserData {
   public String name;
-  public ArrayList<Book> read;
-  public ArrayList<Book> reading;
-  public ArrayList<Book> favorites;
+  public Bookshelf read;
+  public Bookshelf reading;
+  public Bookshelf favorites;
   public ArrayList<Review> reviews;
-  public ArrayList<Book> wantToRead;
+  public Bookshelf wantToRead;
   public ArrayList<Bookshelf> bookshelfs;
 
 }
