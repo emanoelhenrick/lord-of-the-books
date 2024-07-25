@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Bookshelf {
   public BookshelfType type;
-  public String userId;
-  public String username;
+  private String userId;
+  private String username;
   public ArrayList<Book> books;
 }

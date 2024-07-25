@@ -3,7 +3,7 @@ package org.minimundo.core.domain.models;
 import java.util.ArrayList;
 
 public class Book {
-  public String id;
+  private String id;
   public String title;
   public ArrayList<String> authors;
   public String publisher;

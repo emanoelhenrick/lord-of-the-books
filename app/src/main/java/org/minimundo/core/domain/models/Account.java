@@ -3,11 +3,11 @@ package org.minimundo.core.domain.models;
 import java.time.LocalDateTime;
 
 public class Account {
-  public String id;
-  public String username;
-  public String email;
-  public String password;
-  public LocalDateTime createdAt;
+  private String id;
+  private String username;
+  private String email;
+  private String password;
+  private LocalDateTime createdAt;
 
-  public UserData data;
+  private UserData data;
 }

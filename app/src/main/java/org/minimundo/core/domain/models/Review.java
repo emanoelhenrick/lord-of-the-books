@@ -1,9 +1,9 @@
 package org.minimundo.core.domain.models;
 
 public class Review {
-  public Long bookId;
+  private String bookId;
   public Double stars;
-  public String userId;
+  private String userId;
 
   public String username;
   public String text;
