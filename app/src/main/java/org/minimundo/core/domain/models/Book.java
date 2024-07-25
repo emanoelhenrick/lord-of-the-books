@@ -2,15 +2,14 @@ package org.minimundo.core.domain.models;
 
 import java.util.ArrayList;
 
-public record Book(
-  String id,
-  String title,
-  ArrayList<String> authors,
-  String publisher,
-  String description,
-  String publishedYear,
-  ArrayList<String> categories,
-  int pageCount,
-  double stars
-) {
+public class Book {
+  public String id;
+  public String title;
+  public ArrayList<String> authors;
+  public String publisher;
+  public String description;
+  public String publishedYear;
+  public ArrayList<String> categories;
+  public int pageCount;
+  public double stars;
 }
